@@ -1,9 +1,11 @@
-const http = require('http');
+//const http = require('http');
+const express = require('express');
+const app = express();
 
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
+app.get('/', (req, res) => {
   readFile('./index.html' 'utf8', (err, html) => {
     if(err){
       res.status(500).send("error 500!");

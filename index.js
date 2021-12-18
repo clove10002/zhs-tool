@@ -1,12 +1,11 @@
 const express = require('express');
+const fs = require('fs')
 const app = express();
 
 app.get('/', (req, res) => {
-  var hh = "";
-  readFile('./index.html', 'utf8', (err, html) => {
-    hh = html;
-  });
-  res.send(hh);        
+  fs.readFile('./index.html', 'utf8', (err, html) => {
+    res.send(html);  
+  });      
 });
 
 app.listen(process.env.PORT || 3000, () => console.log('App available'));

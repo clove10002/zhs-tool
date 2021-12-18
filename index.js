@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  readFile('./index.html' 'utf8', (err, html) => {
+  readFile('./index.html', 'utf8', (err, html) => {
     res.send(html);
   })
   

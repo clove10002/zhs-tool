@@ -1,4 +1,3 @@
-//const http = require('http');
 const express = require('express');
 const app = express();
 
@@ -15,6 +14,4 @@ app.get('/', (req, res) => {
   
 });
 
-app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(process.env.PORT || 3000, () => console.log('App available'))
